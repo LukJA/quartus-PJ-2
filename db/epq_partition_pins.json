@@ -1,0 +1,65 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "pc_debug[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_debug[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_debug[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_debug[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_debug[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_debug[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_debug[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_debug[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pcclk_debug",
+					"strict" : false
+				},
+				{
+					"name" : "dclk_debug",
+					"strict" : false
+				},
+				{
+					"name" : "iclk_debug",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "Jrel_D",
+					"strict" : false
+				},
+				{
+					"name" : "Jabs_D",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,833 @@
+Analysis & Synthesis report for epq
+Wed Jan 18 22:02:50 2017
+Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for rom1p_altera:program_memory|altsyncram:altsyncram_component|altsyncram_k414:auto_generated
+ 13. Parameter Settings for User Entity Instance: clock_generator:clock_gen|vDFF:state_register
+ 14. Parameter Settings for User Entity Instance: program_counter:pc_gen|vDFF:program_counter
+ 15. Parameter Settings for User Entity Instance: rom1p_altera:program_memory|altsyncram:altsyncram_component
+ 16. Parameter Settings for User Entity Instance: register_file:registers|vDFF:r0
+ 17. Parameter Settings for User Entity Instance: register_file:registers|vDFF:r1
+ 18. Parameter Settings for User Entity Instance: register_file:registers|vDFF:r2
+ 19. Parameter Settings for User Entity Instance: register_file:registers|vDFF:r3
+ 20. Parameter Settings for User Entity Instance: register_file:registers|vDFF:r4
+ 21. Parameter Settings for User Entity Instance: register_file:registers|vDFF:r5
+ 22. Parameter Settings for User Entity Instance: register_file:registers|vDFF:r6
+ 23. Parameter Settings for User Entity Instance: register_file:registers|vDFF:r7
+ 24. Parameter Settings for User Entity Instance: register_file:registers|vDFF:r8
+ 25. Parameter Settings for User Entity Instance: register_file:registers|vDFF:r9
+ 26. Parameter Settings for User Entity Instance: register_file:registers|vDFF:rA
+ 27. Parameter Settings for User Entity Instance: register_file:registers|vDFF:rB
+ 28. Parameter Settings for User Entity Instance: register_file:registers|vDFF:rC
+ 29. Parameter Settings for User Entity Instance: register_file:registers|vDFF:rD
+ 30. Parameter Settings for User Entity Instance: register_file:registers|vDFF:rE
+ 31. Parameter Settings for User Entity Instance: register_file:registers|vDFF:rF
+ 32. altsyncram Parameter Settings by Entity Instance
+ 33. Port Connectivity Checks: "main_ALU:ALU"
+ 34. Port Connectivity Checks: "rom1p_altera:program_memory"
+ 35. Port Connectivity Checks: "program_counter:pc_gen|incrementer:increment_adder"
+ 36. Port Connectivity Checks: "clock_generator:clock_gen"
+ 37. Post-Synthesis Netlist Statistics for Top Partition
+ 38. Elapsed Time Per Partition
+ 39. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2016  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed Jan 18 22:02:49 2017       ;
+; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Revision Name                   ; epq                                         ;
+; Top-level Entity Name           ; epq                                         ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 11                                          ;
+; Total pins                      ; 23                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 2,048                                       ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CEBA4F23C7        ;                    ;
+; Top-level entity name                                                           ; epq                ; epq                ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                                  ; Off                ;                    ;
+; VHDL Version                                                                    ; VHDL_2008          ; VHDL_1993          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                               ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------+---------+
+; flops.vhd                        ; yes             ; User VHDL File                   ; C:/Users/lukej/Desktop/EPQ/quartus PJ 2/flops.vhd                            ;         ;
+; epq.vhd                          ; yes             ; User VHDL File                   ; C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd                              ;         ;
+; clock.vhd                        ; yes             ; User VHDL File                   ; C:/Users/lukej/Desktop/EPQ/quartus PJ 2/clock.vhd                            ;         ;
+; pc.vhd                           ; yes             ; User VHDL File                   ; C:/Users/lukej/Desktop/EPQ/quartus PJ 2/pc.vhd                               ;         ;
+; epq.mif                          ; yes             ; User Memory Initialization File  ; C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.mif                              ;         ;
+; rom1p_altera.vhd                 ; yes             ; User Wizard-Generated File       ; C:/Users/lukej/Desktop/EPQ/quartus PJ 2/rom1p_altera.vhd                     ;         ;
+; regfile.vhd                      ; yes             ; User VHDL File                   ; C:/Users/lukej/Desktop/EPQ/quartus PJ 2/regfile.vhd                          ;         ;
+; demuxvhd.vhd                     ; yes             ; User VHDL File                   ; C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd                         ;         ;
+; mypkg.vhd                        ; yes             ; User VHDL File                   ; C:/Users/lukej/Desktop/EPQ/quartus PJ 2/mypkg.vhd                            ;         ;
+; arithmeticl.vhd                  ; yes             ; User VHDL File                   ; C:/Users/lukej/Desktop/EPQ/quartus PJ 2/arithmeticl.vhd                      ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal161.inc                   ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/aglobal161.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                     ; c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_k414.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/lukej/Desktop/EPQ/quartus PJ 2/db/altsyncram_k414.tdf               ;         ;
++----------------------------------+-----------------+----------------------------------+------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                    ;
++---------------------------------------------+--------------------------------------------------+
+; Resource                                    ; Usage                                            ;
++---------------------------------------------+--------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 8                                                ;
+;                                             ;                                                  ;
+; Combinational ALUT usage for logic          ; 15                                               ;
+;     -- 7 input functions                    ; 0                                                ;
+;     -- 6 input functions                    ; 0                                                ;
+;     -- 5 input functions                    ; 0                                                ;
+;     -- 4 input functions                    ; 0                                                ;
+;     -- <=3 input functions                  ; 15                                               ;
+;                                             ;                                                  ;
+; Dedicated logic registers                   ; 11                                               ;
+;                                             ;                                                  ;
+; I/O pins                                    ; 23                                               ;
+; Total MLAB memory bits                      ; 0                                                ;
+; Total block memory bits                     ; 2048                                             ;
+;                                             ;                                                  ;
+; Total DSP Blocks                            ; 0                                                ;
+;                                             ;                                                  ;
+; Maximum fan-out node                        ; program_counter:pc_gen|vDFF:program_counter|Q[0] ;
+; Maximum fan-out                             ; 10                                               ;
+; Total fan-out                               ; 176                                              ;
+; Average fan-out                             ; 2.20                                             ;
++---------------------------------------------+--------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                   ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                             ; Entity Name     ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |epq                                      ; 15 (0)              ; 11 (0)                    ; 2048              ; 0          ; 23   ; 0            ; |epq                                                                                            ; epq             ; work         ;
+;    |clock_generator:clock_gen|            ; 6 (6)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |epq|clock_generator:clock_gen                                                                  ; clock_generator ; work         ;
+;       |vDFF:state_register|               ; 0 (0)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |epq|clock_generator:clock_gen|vDFF:state_register                                              ; vDFF            ; work         ;
+;    |program_counter:pc_gen|               ; 9 (1)               ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |epq|program_counter:pc_gen                                                                     ; program_counter ; work         ;
+;       |incrementer:increment_adder|       ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |epq|program_counter:pc_gen|incrementer:increment_adder                                         ; incrementer     ; work         ;
+;       |vDFF:program_counter|              ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |epq|program_counter:pc_gen|vDFF:program_counter                                                ; vDFF            ; work         ;
+;    |rom1p_altera:program_memory|          ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |epq|rom1p_altera:program_memory                                                                ; rom1p_altera    ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |epq|rom1p_altera:program_memory|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
+;          |altsyncram_k414:auto_generated| ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |epq|rom1p_altera:program_memory|altsyncram:altsyncram_component|altsyncram_k414:auto_generated ; altsyncram_k414 ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                 ;
++-------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------+
+; Name                                                                                                  ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF     ;
++-------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------+
+; rom1p_altera:program_memory|altsyncram:altsyncram_component|altsyncram_k414:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 12           ; --           ; --           ; 3072 ; epq.mif ;
++-------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                               ;
++--------+--------------+---------+--------------+--------------+----------------------------------+------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                  ; IP Include File  ;
++--------+--------------+---------+--------------+--------------+----------------------------------+------------------+
+; Altera ; ROM: 1-PORT  ; 16.1    ; N/A          ; N/A          ; |epq|rom1p_altera:program_memory ; rom1p_altera.vhd ;
++--------+--------------+---------+--------------+--------------+----------------------------------+------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 11    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |epq|program_counter:pc_gen|vDFF:program_counter|Q[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Source assignments for rom1p_altera:program_memory|altsyncram:altsyncram_component|altsyncram_k414:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                  ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                   ;
++---------------------------------+--------------------+------+-----------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_generator:clock_gen|vDFF:state_register ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: program_counter:pc_gen|vDFF:program_counter ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rom1p_altera:program_memory|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+----------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                         ;
++------------------------------------+----------------------+----------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                      ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                               ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                      ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                      ;
+; WIDTH_A                            ; 12                   ; Signed Integer                               ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                               ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                               ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                      ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                      ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                      ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                      ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                      ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                      ;
+; WIDTH_B                            ; 1                    ; Signed Integer                               ;
+; WIDTHAD_B                          ; 1                    ; Signed Integer                               ;
+; NUMWORDS_B                         ; 0                    ; Signed Integer                               ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                      ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                      ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                      ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                      ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                      ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                      ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                      ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                      ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                      ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                      ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                      ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                      ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                               ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer                               ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                      ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer                               ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                      ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                      ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                      ;
+; INIT_FILE                          ; epq.mif              ; Untyped                                      ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                      ;
+; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                               ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                      ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                      ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                      ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                      ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                      ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                      ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                      ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                      ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                               ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                      ;
+; CBXI_PARAMETER                     ; altsyncram_k414      ; Untyped                                      ;
++------------------------------------+----------------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:r0 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:r1 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:r2 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:r3 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:r4 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:r5 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:r6 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:r7 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:r8 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:r9 ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:rA ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:rB ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:rC ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:rD ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:rE ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: register_file:registers|vDFF:rF ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                        ;
++-------------------------------------------+-------------------------------------------------------------+
+; Name                                      ; Value                                                       ;
++-------------------------------------------+-------------------------------------------------------------+
+; Number of entity instances                ; 1                                                           ;
+; Entity Instance                           ; rom1p_altera:program_memory|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                         ;
+;     -- WIDTH_A                            ; 12                                                          ;
+;     -- NUMWORDS_A                         ; 256                                                         ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                      ;
+;     -- WIDTH_B                            ; 1                                                           ;
+;     -- NUMWORDS_B                         ; 0                                                           ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                      ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                        ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                   ;
++-------------------------------------------+-------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "main_ALU:ALU"                                                                           ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; output   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; zero     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rom1p_altera:program_memory"                                                         ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; q[11] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Port Connectivity Checks: "program_counter:pc_gen|incrementer:increment_adder" ;
++------+-------+----------+------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                              ;
++------+-------+----------+------------------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                                         ;
++------+-------+----------+------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_generator:clock_gen"                                                          ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; iclr ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 11                          ;
+;     SLD               ; 8                           ;
+;     plain             ; 3                           ;
+; arriav_lcell_comb     ; 15                          ;
+;     arith             ; 8                           ;
+;         1 data inputs ; 8                           ;
+;     normal            ; 7                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 3                           ;
+; boundary_port         ; 23                          ;
+; stratixv_ram_block    ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 1.70                        ;
+; Average LUT depth     ; 1.06                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+    Info: Processing started: Wed Jan 18 22:02:35 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off epq -c epq
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file flops.vhd
+    Info (12022): Found design unit 1: vDFF-behavioral File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/flops.vhd Line: 12
+    Info (12023): Found entity 1: vDFF File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/flops.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file epq.vhd
+    Info (12022): Found design unit 1: epq-impl File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 17
+    Info (12023): Found entity 1: epq File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file clock.vhd
+    Info (12022): Found design unit 1: clock_generator-behavioral File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/clock.vhd Line: 18
+    Info (12023): Found entity 1: clock_generator File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/clock.vhd Line: 10
+Info (12021): Found 6 design units, including 3 entities, in source file pc.vhd
+    Info (12022): Found design unit 1: program_counter-impl File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/pc.vhd Line: 14
+    Info (12022): Found design unit 2: incrementer-impl File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/pc.vhd Line: 54
+    Info (12022): Found design unit 3: jadd_jsub-impl File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/pc.vhd Line: 90
+    Info (12023): Found entity 1: program_counter File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/pc.vhd Line: 5
+    Info (12023): Found entity 2: incrementer File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/pc.vhd Line: 46
+    Info (12023): Found entity 3: jadd_jsub File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/pc.vhd Line: 81
+Info (12021): Found 2 design units, including 1 entities, in source file rom1p_altera.vhd
+    Info (12022): Found design unit 1: rom1p_altera-SYN File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/rom1p_altera.vhd Line: 53
+    Info (12023): Found entity 1: rom1p_altera File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/rom1p_altera.vhd Line: 43
+Info (12021): Found 6 design units, including 3 entities, in source file regfile.vhd
+    Info (12022): Found design unit 1: register_file-impl File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/regfile.vhd Line: 14
+    Info (12022): Found design unit 2: array_or-impl File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/regfile.vhd Line: 83
+    Info (12022): Found design unit 3: clock_combine-impl File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/regfile.vhd Line: 109
+    Info (12023): Found entity 1: register_file File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/regfile.vhd Line: 5
+    Info (12023): Found entity 2: array_or File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/regfile.vhd Line: 76
+    Info (12023): Found entity 3: clock_combine File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/regfile.vhd Line: 101
+Warning (12090): Entity "mux" obtained from "demuxvhd.vhd" instead of from Quartus Prime megafunction library File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 85
+Info (12021): Found 6 design units, including 3 entities, in source file demuxvhd.vhd
+    Info (12022): Found design unit 1: decoder-rtl File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 13
+    Info (12022): Found design unit 2: demux-rtl File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 54
+    Info (12022): Found design unit 3: mux-rtl File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 93
+    Info (12023): Found entity 1: decoder File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 6
+    Info (12023): Found entity 2: demux File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 46
+    Info (12023): Found entity 3: mux File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 85
+Info (12021): Found 1 design units, including 0 entities, in source file mypkg.vhd
+    Info (12022): Found design unit 1: my_pkg File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/mypkg.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file arithmeticl.vhd
+    Info (12022): Found design unit 1: main_ALU-behavioral File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/arithmeticl.vhd Line: 16
+    Info (12023): Found entity 1: main_ALU File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/arithmeticl.vhd Line: 6
+Info (12127): Elaborating entity "epq" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at epq.vhd(22): object "Iclr" assigned a value but never read File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 22
+Warning (10541): VHDL Signal Declaration warning at epq.vhd(24): used implicit default value for signal "rclk1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 24
+Warning (10541): VHDL Signal Declaration warning at epq.vhd(24): used implicit default value for signal "rclk2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 24
+Warning (10036): Verilog HDL or VHDL warning at epq.vhd(24): object "overflow" assigned a value but never read File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 24
+Warning (10036): Verilog HDL or VHDL warning at epq.vhd(24): object "zero" assigned a value but never read File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 24
+Warning (10541): VHDL Signal Declaration warning at epq.vhd(27): used implicit default value for signal "rinput1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 27
+Warning (10541): VHDL Signal Declaration warning at epq.vhd(27): used implicit default value for signal "rinput2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 27
+Warning (10036): Verilog HDL or VHDL warning at epq.vhd(27): object "ALUoutput" assigned a value but never read File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 27
+Warning (10541): VHDL Signal Declaration warning at epq.vhd(28): used implicit default value for signal "raddr1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 28
+Warning (10541): VHDL Signal Declaration warning at epq.vhd(28): used implicit default value for signal "raddr2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 28
+Info (12128): Elaborating entity "clock_generator" for hierarchy "clock_generator:clock_gen" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 35
+Warning (10541): VHDL Signal Declaration warning at clock.vhd(14): used implicit default value for signal "Iclr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/clock.vhd Line: 14
+Warning (10492): VHDL Process Statement warning at clock.vhd(29): signal "current_s" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/clock.vhd Line: 29
+Info (12128): Elaborating entity "vDFF" for hierarchy "clock_generator:clock_gen|vDFF:state_register" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/clock.vhd Line: 25
+Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:pc_gen" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 38
+Info (12128): Elaborating entity "vDFF" for hierarchy "program_counter:pc_gen|vDFF:program_counter" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/pc.vhd Line: 21
+Info (12128): Elaborating entity "incrementer" for hierarchy "program_counter:pc_gen|incrementer:increment_adder" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/pc.vhd Line: 23
+Info (12128): Elaborating entity "jadd_jsub" for hierarchy "program_counter:pc_gen|jadd_jsub:relative_adder" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/pc.vhd Line: 27
+Info (12128): Elaborating entity "rom1p_altera" for hierarchy "rom1p_altera:program_memory" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 41
+Info (12128): Elaborating entity "altsyncram" for hierarchy "rom1p_altera:program_memory|altsyncram:altsyncram_component" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/rom1p_altera.vhd Line: 60
+Info (12130): Elaborated megafunction instantiation "rom1p_altera:program_memory|altsyncram:altsyncram_component" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/rom1p_altera.vhd Line: 60
+Info (12133): Instantiated megafunction "rom1p_altera:program_memory|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/rom1p_altera.vhd Line: 60
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "init_file" = "epq.mif"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
+    Info (12134): Parameter "maximum_depth" = "0"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "numwords_b" = "0"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "AUTO"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "12"
+    Info (12134): Parameter "width_b" = "1"
+    Info (12134): Parameter "width_byteena_a" = "1"
+    Info (12134): Parameter "width_byteena_b" = "1"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "widthad_b" = "1"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_k414.tdf
+    Info (12023): Found entity 1: altsyncram_k414 File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/db/altsyncram_k414.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_k414" for hierarchy "rom1p_altera:program_memory|altsyncram:altsyncram_component|altsyncram_k414:auto_generated" File: c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:registers" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 44
+Info (12128): Elaborating entity "decoder" for hierarchy "register_file:registers|decoder:port1decoder" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/regfile.vhd Line: 41
+Info (12128): Elaborating entity "demux" for hierarchy "register_file:registers|demux:port1demux" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/regfile.vhd Line: 44
+Info (12128): Elaborating entity "mux" for hierarchy "register_file:registers|mux:port1mux" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/regfile.vhd Line: 47
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(98): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(99): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(100): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 100
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(101): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(102): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(103): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(104): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(105): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 105
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(106): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 106
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(107): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 107
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(108): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 108
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(109): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(110): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 110
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(111): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 111
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(112): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at demuxvhd.vhd(113): signal "input" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/demuxvhd.vhd Line: 113
+Info (12128): Elaborating entity "array_or" for hierarchy "register_file:registers|array_or:or1" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/regfile.vhd Line: 63
+Info (12128): Elaborating entity "clock_combine" for hierarchy "register_file:registers|clock_combine:clo1" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/regfile.vhd Line: 66
+Info (12128): Elaborating entity "main_ALU" for hierarchy "main_ALU:ALU" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 47
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "rom1p_altera:program_memory|altsyncram:altsyncram_component|altsyncram_k414:auto_generated|q_a[8]" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/db/altsyncram_k414.tdf Line: 219
+        Warning (14320): Synthesized away node "rom1p_altera:program_memory|altsyncram:altsyncram_component|altsyncram_k414:auto_generated|q_a[9]" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/db/altsyncram_k414.tdf Line: 242
+        Warning (14320): Synthesized away node "rom1p_altera:program_memory|altsyncram:altsyncram_component|altsyncram_k414:auto_generated|q_a[10]" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/db/altsyncram_k414.tdf Line: 265
+        Warning (14320): Synthesized away node "rom1p_altera:program_memory|altsyncram:altsyncram_component|altsyncram_k414:auto_generated|q_a[11]" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/db/altsyncram_k414.tdf Line: 288
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "data_debug[0]" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 10
+    Warning (15610): No output dependent on input pin "data_debug[1]" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 10
+    Warning (15610): No output dependent on input pin "data_debug[2]" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 10
+    Warning (15610): No output dependent on input pin "data_debug[3]" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 10
+    Warning (15610): No output dependent on input pin "data_debug[4]" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 10
+    Warning (15610): No output dependent on input pin "data_debug[5]" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 10
+    Warning (15610): No output dependent on input pin "data_debug[6]" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 10
+    Warning (15610): No output dependent on input pin "data_debug[7]" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 10
+    Warning (15610): No output dependent on input pin "AS_D" File: C:/Users/lukej/Desktop/EPQ/quartus PJ 2/epq.vhd Line: 12
+Info (21057): Implemented 46 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 15 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info: Peak virtual memory: 749 megabytes
+    Info: Processing ended: Wed Jan 18 22:02:50 2017
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:29
+
+

@@ -1,0 +1,21 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity demux is
+    port(
+        control : in unsigned;
+        input   : in std_logic;
+        outputs : out std_logic_vector
+        );
+end entity demux;
+
+architecture rtl of demux is
+    -- Check size of input vectors
+    assert 2**control'length = outputs'length 
+           report "outputs length must be 2**control length" 
+           severity failure;
+    -- actually do the demuxing - this will cause feedback latches to be inferred
+    outputs(to_integer(unsigned(control)) <= input;
+
+end architecture;

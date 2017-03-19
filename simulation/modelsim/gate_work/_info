@@ -1,0 +1,84 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/lukej/Desktop/EPQ/quartus PJ 2/simulation/modelsim
+Ealu_vhd_tst
+w1485040985
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+8C:/Users/lukej/Desktop/EPQ/quartus PJ 2/simulation/modelsim/epq.vht
+FC:/Users/lukej/Desktop/EPQ/quartus PJ 2/simulation/modelsim/epq.vht
+l0
+L32
+V6d`mfe[h_b@hDfo7=YQo_0
+!s100 Lc2NeDQV6O8ojB5W7]F`h3
+Z3 OV;C;10.5b;63
+33
+!s110 1485041009
+!i10b 1
+!s108 1485041009.000000
+!s90 -reportprogress|300|-2008|-work|work|C:/Users/lukej/Desktop/EPQ/quartus PJ 2/simulation/modelsim/epq.vht|
+!s107 C:/Users/lukej/Desktop/EPQ/quartus PJ 2/simulation/modelsim/epq.vht|
+!i113 1
+o-2008 -work work
+Z4 tExplicit 1 CvgOpt 0
+Eepq
+Z5 w1484777017
+Z6 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 41KVoNENnj;RUmMIITVQg1
+Z7 DPx8 cyclonev 19 cyclonev_components 0 22 MmMkVfW5JWkR?lm<VcfRO1
+Z8 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 3L]34bNSPL@[RD2AeKH]S3
+Z9 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z10 DPx6 altera 11 dffeas_pack 0 22 zWCf]NF6heG=Dhmc@B0=T2
+Z11 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+R1
+R2
+Z12 DPx6 altera 28 altera_primitives_components 0 22 _Q9E2TD5YB<<@P0[5jYTG0
+R0
+Z13 8epq.vho
+Z14 Fepq.vho
+l0
+L39
+V_6F5b^CkMOU@9DEORaC`93
+!s100 >KQ1LCKPCcWoYSK[E87L01
+R3
+31
+Z15 !s110 1485040993
+!i10b 1
+Z16 !s108 1485040993.000000
+Z17 !s90 -reportprogress|300|-93|-work|work|epq.vho|
+Z18 !s107 epq.vho|
+!i113 1
+Z19 o-93 -work work
+R4
+Astructure
+R6
+R7
+R8
+R9
+R10
+R11
+R1
+R2
+R12
+DEx4 work 3 epq 0 22 _6F5b^CkMOU@9DEORaC`93
+l163
+L79
+Vl[N]Ej8R2A0ANM>>b>Q9E1
+!s100 DHVKMgzF3e;XG0?UikM;H0
+R3
+31
+R15
+!i10b 1
+R16
+R17
+R18
+!i113 1
+R19
+R4

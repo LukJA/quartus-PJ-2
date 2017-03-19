@@ -1,0 +1,22 @@
+-- top level entity epq
+
+library IEEE;
+use IEEE.std_logic_1164.all;
+library work;
+
+entity epq is
+	port (	
+		clk	: in std_logic;
+		PCclk, Dclk, Iclk 	: out std_logic;
+		Iclr	: out std_logic
+		);
+end epq;
+
+architecture impl of epq is
+
+begin
+
+	c_gen: clock_generator port map (clk, PCclk, Dclk, Iclk, Iclr);
+	
+end impl;
+	

@@ -1,0 +1,48 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity register_file is
+	port (	
+		clk_P1, clk_P2	: in std_logic;
+		addr_P1, addr_P2	: in std_logic_vector(3 downto 0);
+		stream_in_P1, stream_in_P2	: in std_logic_vector(7 downto 0);
+		stream_out_P1, stream_out_P2	: out std_logic_vector(7 downto 0);
+		);
+end register_file;
+
+architecture impl of register_file is
+
+	signal clk0, clk1, clk2, clk3, clk4, clk5, clk6, clk7: std_logic;
+	signal clk8, clk9, clkA, clkB, clkC, clkD, clkE, clkF: std_logic;
+	
+	signal q0, q1, q2, q3, q4, q5, q6, q7: std_logic;
+	signal q8, q9, qA, qB, qC, qD, qE, qF: std_logic;
+	
+	signal d0, d1, d2, d3, d4, d5, d6, d7: std_logic;
+	signal d8, d9, dA, dB, dC, dD, dE, dF: std_logic;
+	
+begin 
+	-- explicitly generate a register for each address
+	r0: entity work.vDFF generic map (8) port map (clk0, d0, q0);
+	r1: entity work.vDFF generic map (8) port map (clk1, d1, q1);
+	r2: entity work.vDFF generic map (8) port map (clk2, d2, q2);
+	r3: entity work.vDFF generic map (8) port map (clk3, d3, q3);
+	r4: entity work.vDFF generic map (8) port map (clk4, d4, q4);
+	r5: entity work.vDFF generic map (8) port map (clk5, d5, q5);
+	r6: entity work.vDFF generic map (8) port map (clk6, d6, q6);
+	r7: entity work.vDFF generic map (8) port map (clk7, d7, q7);
+	r8: entity work.vDFF generic map (8) port map (clk8, d8, q8);
+	r9: entity work.vDFF generic map (8) port map (clk9, d9, q9);
+	rA: entity work.vDFF generic map (8) port map (clkA, dA, qA);
+	rB: entity work.vDFF generic map (8) port map (clkB, dB, qB);
+	rC: entity work.vDFF generic map (8) port map (clkC, dC, qC);
+	rD: entity work.vDFF generic map (8) port map (clkD, dD, qD);
+	rE: entity work.vDFF generic map (8) port map (clkE, dE, qE);
+	rF: entity work.vDFF generic map (8) port map (clkF, dF, qF);
+	
+	-- port one access
+		
+
+	
+	
+end impl;

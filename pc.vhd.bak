@@ -1,0 +1,22 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity program_counter is
+	port (
+		PCclk			: in std_logic;
+		stream_in	: in std_logic_vector(7 downto 0);
+		curr_addr	: out std_logic_vector(7 downto 0)
+		);
+end program_counter;
+
+architecture impl of program_counter is
+
+	signal PC_D, PC_Q: std_logic_vector(7 downto 0)
+
+begin 
+	-- Main PC Register
+	counter_register: entity work.vDFF generic map (8) port map (PCclk, PC_D, PC_Q);
+	
+end impl;
+		
+		
